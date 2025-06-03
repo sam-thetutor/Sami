@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+# Sami: Social Mining Dapp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sami is a decentralized social mining platform that allows users to earn blockchain tokens by promoting projects on Twitter. The higher the engagement on their posts, the greater their rewards from the project's token allocation.
 
-Currently, two official plugins are available:
+## How Sami Works
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Project Campaign Registration**: Projects register campaigns on the Sami platform, allocating a specific amount of their tokens as rewards.
+2. **User Onboarding**: Users register and verify their Twitter accounts on Sami.
+3. **Content Creation & Submission**: Registered users post content about a campaign project on Twitter, tagging the project as required. They then submit their Twitter post link to Sami.
+4. **Engagement Tracking**: Sami tracks engagement (likes, retweets, comments, etc.) on the submitted post for a set period (e.g., one week).
+5. **Reward Distribution**: After the tracking period, users receive rewards from the campaign's token allocation, proportional to the engagement their post received.
 
-## Expanding the ESLint configuration
+## Tech Stack
+- **Frontend**: React, TypeScript
+- **Build Tool**: Vite
+- **Linting**: ESLint (with TypeScript and React plugins)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Prerequisites
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+### Installation
+```bash
+npm install
+# or
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### Development
+To start the development server with hot module replacement:
+```bash
+npm run dev
+# or
+yarn dev
 ```
+
+### Build
+To build the project for production:
+```bash
+npm run build
+# or
+yarn build
+```
+
+### Preview
+To preview the production build locally:
+```bash
+npm run preview
+# or
+yarn preview
+```
+
+## Linting & Code Quality
+This project uses ESLint with recommended rules for TypeScript and React. To run the linter:
+```bash
+npm run lint
+# or
+yarn lint
+```
+
+For production applications, consider enabling type-aware lint rules and additional plugins as described in the comments of `eslint.config.js`.
+
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+*This project was bootstrapped with Vite + React + TypeScript.*
